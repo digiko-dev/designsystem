@@ -73,7 +73,7 @@ export default function ColorsPage() {
           <div className="demo-preview">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(400px, 100%), 1fr))", gap: "var(--ds-space-3)" }}>
               {tokens.map((t) => (
-                <div key={t.name} style={{ display: "flex", alignItems: "flex-start", gap: "var(--ds-space-4)", padding: "var(--ds-space-3)", opacity: t.deprecated ? 0.55 : 1 }}>
+                <div key={t.name} style={{ display: "flex", alignItems: "flex-start", gap: "var(--ds-space-4)", padding: "var(--ds-space-3)" }}>
                   <div style={{ width: 72, height: 72, flexShrink: 0, borderRadius: "var(--ds-radius-lg)", border: "1px solid var(--ds-color-border)", background: `var(${t.name})` }} />
                   <div style={{ minWidth: 0 }}>
                     <div className="ds-overline">
@@ -84,16 +84,9 @@ export default function ColorsPage() {
                     </div>
                     <div className="ds-text-base ds-text-secondary" style={{ marginBlockStart: "var(--ds-space-2)" }}>
                       {t.usage ?? t.sourceNote ?? (
-                        <span className="ds-text-tertiary">
-                          {t.deprecated ? "On its way out — see below." : "No guidance yet."}
-                        </span>
+                        <span className="ds-text-tertiary">No guidance yet.</span>
                       )}
                     </div>
-                    {t.deprecated && (
-                      <div className="ds-text-sm" style={{ color: "var(--ds-color-warning)", marginBlockStart: "var(--ds-space-2)" }}>
-                        deprecated &mdash; do not use in new code
-                      </div>
-                    )}
                   </div>
                 </div>
               ))}
@@ -140,7 +133,7 @@ export default function ColorsPage() {
             <div className="demo-preview">
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(400px, 100%), 1fr))", gap: "var(--ds-space-3)" }}>
                 {list.map((u) => (
-                  <div key={u.cls} style={{ display: "flex", alignItems: "flex-start", gap: "var(--ds-space-4)", padding: "var(--ds-space-3)", opacity: u.replacedBy ? 0.55 : 1 }}>
+                  <div key={u.cls} style={{ display: "flex", alignItems: "flex-start", gap: "var(--ds-space-4)", padding: "var(--ds-space-3)" }}>
                     <div style={{ width: 72, height: 72, flexShrink: 0, borderRadius: "var(--ds-radius-lg)", border: "1px solid var(--ds-color-border)", background: `var(${u.token})` }} />
                     <div style={{ minWidth: 0 }}>
                       <div className="ds-overline">
@@ -154,11 +147,6 @@ export default function ColorsPage() {
                       <div className="ds-text-base ds-text-secondary" style={{ fontFamily: "var(--ds-font-mono)", marginBlockStart: "var(--ds-space-2)" }}>
                         var({u.token})
                       </div>
-                      {u.replacedBy && (
-                        <div className="ds-text-sm" style={{ color: "var(--ds-color-warning)", marginBlockStart: "var(--ds-space-2)" }}>
-                          deprecated &mdash; use .{u.replacedBy}
-                        </div>
-                      )}
                     </div>
                   </div>
                 ))}

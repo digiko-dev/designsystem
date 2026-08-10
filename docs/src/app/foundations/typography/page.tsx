@@ -162,9 +162,7 @@ export default function TypographyPage() {
         <p className="demo-section__description">
           A rung styles one element. <code className="ex-code">.ds-prose-block</code> styles a
           container and everything inside it, which is what you want for markdown you did not
-          write: CMS output, an article body, a docs page. It is the only prose component. The
-          lighter <code className="ex-code">.ds-prose</code> and the whole ds-editorial-* family
-          were earlier answers to the same question and are on the Deprecated page.
+          write: CMS output, an article body, a docs page. It is the only prose component.
         </p>
         <p className="demo-section__description">
           It owns the reading size (<code className="ex-code">--ds-type-copy-size</code>, so it
